@@ -1,22 +1,21 @@
 import tweepy
 import schedule
-import time
-import random
 import sqlite3
 import configparser
 
-best_time = "00:30"
-time_zone = "Brazil"
+# General settings
+best_time = "15:00"
 
 # Acess keys
+#Keys are place as strings in the file "config.ini"
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read("config.ini")
 
-API_key = config['twitter']['API_key']
-API_secret = config['twitter']['API_secret']
+API_key = config["twitter"]["API_key"]
+API_secret = config["twitter"]["API_secret"]
 
-access_token = config['twitter']['access_token']
-access_token_secret = config['twitter']['access_token_secret']
+access_token = config["twitter"]["access_token"]
+access_token_secret = config["twitter"]["access_token_secret"]
 
 # Authentication
 auth = tweepy.OAuthHandler(API_key, API_secret)
@@ -34,25 +33,28 @@ def get_cat_image():
 
 # Marks the image as already chosen
 def mark_image_as_posted(id):
-    cursor.execute("UPDATE cat_images SET posted = 1 WHERE id = ?", (id,))
+    cursor.execute("UPDATE cat_images SET posted = 1 WHERE id = ?", (id))
     conn.commit()
 
 # Upload image on Twitter
+cat_counter = 0
 def tweet_image():
+    global cat_counter
     try:
         image = get_cat_image()
         if image:
-            # Faz o upload da imagem no Twitter
-            api.update_with_media(image[1])
-            print("Tweet enviado com sucesso!")
-            # Marca a imagem como postada no banco de dados
+            cat_counter +=1
+            media_id = api.media_upload(image[1]).media_id_string
+            api.update_status(status=f"Cat Number {cat_counter}🐈‍⬛", media_ids=[media_id])
+            print("Tweet sent successfully!")
+            # Mark the image as posted in the database
             mark_image_as_posted(image[0])
         else:
-            print("Não há mais imagens para postar.")
+            print("No more images on Database!")
     except Exception as e:
-        print("Erro ao enviar tweet: " + str(e))
+        print("Error on sending tweet: " + str(e))
 
-# Schedules the postsca
+# Schedules the posts
 schedule.every().day.at(best_time).do(tweet_image)
 
 while True:
