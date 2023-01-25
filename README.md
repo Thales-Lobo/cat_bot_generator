@@ -17,11 +17,11 @@ This project is a simple bot that will automatically post random cat images on y
 2. Create a new file called `config.ini` in the root directory of the project.
 3. Add your Twitter API credentials in the `config.ini` file in the following format: <br>
 ```
-[twitter]<br>
-API_key = YOUR_API_KEY<br>
-API_secret = YOUR_API_SECRET<br>
-access_token = YOUR_ACCESS_TOKEN<br>
-access_token_secret = YOUR_ACCESS_TOKEN_SECRET<br> 
+[twitter]
+API_key = YOUR_API_KEY
+API_secret = YOUR_API_SECRET
+access_token = YOUR_ACCESS_TOKEN
+access_token_secret = YOUR_ACCESS_TOKEN_SECRET
 ```
 4. Use the database you find most convenient, the code is structured in such a way as to use the public database "https://www.kaggle.com/datasets/crawford/cat-dataset" (through a folder in the same repository with the name "cats" and 6 subfolders)
 5. Run the script `create_db.py` to create the database with the images path.
@@ -46,7 +46,7 @@ The script "cat_bot_generator.py" uses the Tweepy library to interact with the T
 ## Additional information
 - If you want to post the images at a specific interval you can use the library `schedule` or `apscheduler` to schedule 
 the script to run at specific intervals.
-- If you want to customize the message that gets posted along with the image, you can edit the `status = ` parameter.
+- If you want to customize the message that gets posted along with the image, you can edit the `status` parameter.
 - The script will create a database called `cat_images.db` in the root directory of the project.
 Cat Bot Generator
 - Make sure you have the necessary permissions to tweet images on the account you're using.
