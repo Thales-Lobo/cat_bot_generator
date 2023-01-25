@@ -1,6 +1,5 @@
 # Cat bot generator
-<img src="https://w7.pngwing.com/pngs/419/395/png-transparent-nyan-cat-youtube-cat-animals-text-rectangle.png" width="50" height="50" align="left">
-<img src="https://w7.pngwing.com/pngs/419/395/png-transparent-nyan-cat-youtube-cat-animals-text-rectangle.png" width="50" height="50" align="right">
+<![Nyan Cat](https://media.tenor.com/zBc1XhcbTSoAAAAC/nyan-cat-rainbow.gif)
 Follow me at @GiveCatImages on Twitter!
 
 This project is a simple bot that will automatically post random cat images on your Twitter account at a scheduled time. The images are chosen from a local database, so that no repeated image is posted.
