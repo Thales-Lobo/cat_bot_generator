@@ -6,21 +6,23 @@ This project is a simple bot that will automatically post random cat images on y
 
 ## Prerequisites
 - Python 3
-- Tweepy (`pip install tweepy`)
-- Schedule (`pip install schedule)`
-- Sqlite3 (`pip install sqlite3`)
-- Configparser (`pip install configparser`)
+- Tweepy ```pip install tweepy```
+- Schedule ```pip install schedule```
+- Sqlite3 ```pip install sqlite3```
+- Configparser ```pip install configparser```
 - A Twitter developer account (with API credenitals) with a bot account created
 
 ## How to use
 1. Clone or download this repository.
 2. Create a new file called `config.ini` in the root directory of the project.
-3. Add your Twitter API credentials in the `config.ini` file in the following format:  <br>
+3. Add your Twitter API credentials in the `config.ini` file in the following format: <br>
+```
 [twitter]<br>
 API_key = YOUR_API_KEY<br>
 API_secret = YOUR_API_SECRET<br>
 access_token = YOUR_ACCESS_TOKEN<br>
-access_token_secret = YOUR_ACCESS_TOKEN_SECRET<br>
+access_token_secret = YOUR_ACCESS_TOKEN_SECRET<br> 
+```
 4. Use the database you find most convenient, the code is structured in such a way as to use the public database "https://www.kaggle.com/datasets/crawford/cat-dataset" (through a folder in the same repository with the name "cats" and 6 subfolders)
 5. Run the script `create_db.py` to create the database with the images path.
 6. Run the script `cat_bot_generator.py`
