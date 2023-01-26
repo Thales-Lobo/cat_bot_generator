@@ -1,6 +1,6 @@
 # Cat bot generator
 ![Nyan Cat](https://gist.githubusercontent.com/brudnak/aba00c9a1c92d226f68e8ad8ba1e0a40/raw/e1e4a92f6072d15014f19aa8903d24a1ac0c41a4/nyan-cat.gif)
-Follow me at **@GiveCatImages** on Twitter!
+Follow me at [**@GiveCatImages**](https://twitter.com/GiveCatImages) on Twitter!
 
 This project is a simple bot that will automatically post random cat images on your Twitter account at a scheduled time. The images are chosen from a local database, so that no repeated image is posted.
 
